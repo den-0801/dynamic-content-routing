@@ -1,0 +1,21 @@
+{
+  "exclude": ["src/**/*.spec.ts"],
+  "compilerOptions": {
+    // "baseUrl": "src",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "declaration": true,
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "module": "es6",
+    "target": "es6",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // "esModuleInterop": false,
+
+    "noEmitOnError": true
+  }
+}
