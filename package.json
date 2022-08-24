@@ -1,13 +1,13 @@
 {
   "name": "dynamic-content-routing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Animate simple site static pages routing",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
-  "browser": "dist/index.min.js",
-  "jsdelivr": "dist/index.min.js",
+  "browser": "dist/index-umd.min.js",
+  "jsdelivr": "dist/index-umd.min.js",
   "scripts": {
     "build": "rimraf dist && rollup --config",
     "test": "jest",

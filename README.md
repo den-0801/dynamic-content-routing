@@ -25,11 +25,11 @@ import 'dynamic-content-routing/dist/styles.min.css';
 
 ## cdn
 ```html
-<script src="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.2"></script>
 <!-- utils (optional) -->
-<script src="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.1/dist/utils/index-umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.2/dist/utils/index-umd.min.js"></script>
 <!-- styles (optional) -->
-<link href="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.1/dist/styles.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.2/dist/styles.min.css" rel="stylesheet">
 ```
 
 Usage:
