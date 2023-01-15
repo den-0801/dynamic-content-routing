@@ -1,4 +1,5 @@
 import { EventObserver } from '@/libs/EventObserver';
+import { getDocumentTitle } from '@/libs/dom';
 
 import { Content, ContentLoaderProps } from './types';
 import {
@@ -37,7 +38,7 @@ export class ContentLoader extends EventObserver {
       if (response.ok) {
         try {
           const htmlStr = await response.text();
-          const html = document.createElement('div');
+          const html = document.createElement('html');
           html.innerHTML = htmlStr;
           const contentElement = html.querySelector(`${this.selector}`);
           if (!(contentElement instanceof HTMLElement)) {
@@ -47,6 +48,7 @@ export class ContentLoader extends EventObserver {
 
           const emitData: Content = {
             contentElement,
+            documentTitle: getDocumentTitle(html),
           };
           return Promise.resolve(emitData);
         } catch (_error) {

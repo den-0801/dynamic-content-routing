@@ -136,6 +136,14 @@ function linear(t) {
     return t;
 }
 
+function getDocumentTitle(element) {
+    var _a, _b;
+    return (_b = (_a = element.querySelector('title')) === null || _a === void 0 ? void 0 : _a.textContent) !== null && _b !== void 0 ? _b : '';
+}
+function setDocumentTitle(title, _document) {
+    (_document || document).title = title;
+}
+
 function animateParts$1(parts) {
     var _a, _b, _c, _d;
     return __awaiter(this, void 0, void 0, function* () {
@@ -541,7 +549,7 @@ class ContentLoader extends EventObserver {
                 if (response.ok) {
                     try {
                         const htmlStr = yield response.text();
-                        const html = document.createElement('div');
+                        const html = document.createElement('html');
                         html.innerHTML = htmlStr;
                         const contentElement = html.querySelector(`${this.selector}`);
                         if (!(contentElement instanceof HTMLElement)) {
@@ -550,6 +558,7 @@ class ContentLoader extends EventObserver {
                         }
                         const emitData = {
                             contentElement,
+                            documentTitle: getDocumentTitle(html),
                         };
                         return Promise.resolve(emitData);
                     }
@@ -752,6 +761,7 @@ _DynamicRoute_contentEl = new WeakMap(), _DynamicRoute_partElsList = new WeakMap
         try {
             const loadedData = yield __classPrivateFieldGet(this, _DynamicRoute_instances, "m", _DynamicRoute_animateOutAndLoadContent).call(this, routeEvent);
             __classPrivateFieldGet(this, _DynamicRoute_instances, "m", _DynamicRoute_replaceContent).call(this, (_a = loadedData.contentElement) === null || _a === void 0 ? void 0 : _a.outerHTML);
+            setDocumentTitle(loadedData.documentTitle);
             __classPrivateFieldGet(this, _DynamicRoute_instances, "m", _DynamicRoute_setContentAndPartsEls).call(this);
             // this.#animateContentHeight(prevHeight); // ???
             if (this.animationType === 'js') {

@@ -1,6 +1,6 @@
 {
   "name": "dynamic-content-routing",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Animate simple site static pages routing",
   "private": false,
   "main": "dist/index.js",

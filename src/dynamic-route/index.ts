@@ -2,6 +2,8 @@ import { animate as animateSimple } from '@/libs/animate';
 import { EventObserver } from '@/libs/EventObserver';
 import { linear } from '@/libs/animate/timing-functions';
 
+import { setDocumentTitle } from '@/libs/dom';
+
 import { animate, getContentDefault, getPartsDefault } from './animation';
 import { removeAnimationPropsFromEl } from './animation/animationCss';
 import type { AnimationOptions } from './animation/types';
@@ -69,8 +71,8 @@ export class DynamicRoute extends EventObserver {
 
   run() {
     this.#router.run();
-    this.#router.on('action', this.#onRouteAction.bind(this));
-    this.#router.on('error', this.#onRouteError.bind(this));
+    this.#router.on('action', this.#onRouteAction.bind(this) as Function);
+    this.#router.on('error', this.#onRouteError.bind(this) as Function);
   }
 
   destroy() {
@@ -236,6 +238,7 @@ export class DynamicRoute extends EventObserver {
       const loadedData = await this.#animateOutAndLoadContent(routeEvent);
 
       this.#replaceContent(loadedData.contentElement?.outerHTML);
+      setDocumentTitle(loadedData.documentTitle);
 
       this.#setContentAndPartsEls();
       // this.#animateContentHeight(prevHeight); // ???

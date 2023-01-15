@@ -2,11 +2,16 @@
 
 Animate simple site static pages routing.
 
+## [DEMO](https://dynamic-content-routing-example.vercel.app)
+
 # Install
+
 ## npm
+
 ```sh
 npm install dynamic-content-routing
 ```
+
 ```js
 import DynamicContentRouting from 'dynamic-content-routing';
 // utils (optional)
@@ -24,12 +29,13 @@ import 'dynamic-content-routing/dist/styles.min.css';
 ```
 
 ## cdn
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.2"></script>
 <!-- utils (optional) -->
 <script src="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.2/dist/utils/index-umd.min.js"></script>
 <!-- styles (optional) -->
-<link href="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.2/dist/styles.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/dynamic-content-routing@1.0.2/dist/styles.min.css" rel="stylesheet" />
 ```
 
 Usage:
@@ -89,6 +95,7 @@ and you should include library styles (styles.min.css) inside your page.
 **If you want to animate with css:**
 
 Default props:
+
 ```js
 const dynamicContentRouting = new DynamicContentRouting({
   linkSelector: '.action-link',
@@ -129,6 +136,7 @@ const dynamicContentRouting = new DynamicContentRouting({
 **If you want to animate with js:**
 
 Default props:
+
 ```js
 const dynamicContentRouting = new DynamicContentRouting({
   linkSelector: '.action-link',
@@ -169,6 +177,7 @@ const dynamicContentRouting = new DynamicContentRouting({
   },
 });
 ```
+
 And then
 
 ```js
@@ -180,6 +189,7 @@ dynamicContentRouting.on('error', (error) => {});
 ```
 
 # Props
+
 - **linkSelector** — link selector for element _a_ with _href_ attribute. The main content will be uploaded after click
 - **animationType** — how to animate content and parts: _css_ or _js_
 - **content** — main content options
